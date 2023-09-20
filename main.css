@@ -1,0 +1,480 @@
+/* Global */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #101014;
+    color: aliceblue;
+}
+
+a {
+    font-weight: bolder;
+    text-decoration: none;
+    color: #50C878;
+}
+
+h1 {
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+/* Home.Html */
+
+.container {
+    padding: 20px;
+    margin: 20px;
+}
+
+.subforum {
+    margin-top: 20px;
+}
+
+.subforum-title {
+    background-color: rgb(49, 49, 49);
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.subforum-row {
+    display: grid;
+    grid-template-columns: 7% 60% 13% 20%;
+}
+
+.subforum-column {
+    padding: 10px;
+    margin: 4px;
+    border-radius: 5px;
+    background-color: rgb(31, 31, 31);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subforum-icon i {
+    font-size: 40px;
+}
+
+.subforum-description * {
+    margin-block: 0;
+}
+
+.subforum-stats {
+    font-size: 12px;
+}
+
+.subforum-divider {
+    display: block;
+    height: 1px;
+    border: 0px;
+    background-image: linear-gradient(to right, #101014, #50C878, #101014);
+}
+
+/* Smartphone layout */
+@media (max-width: 460px) {
+    .container {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .subforum-row {
+        display: grid;
+        grid-template-columns: 25% 75%;
+    }
+}
+
+@media (min-width: 460px) and (max-width: 1024px) {
+    .container {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    .subforum-row {
+        display: grid;
+        grid-template-columns: 10% 60% 10% 20%;
+    }
+
+    .subforum-icon i {
+        font-size: 36px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    html {
+        font-size: 16px;
+    }
+
+}
+
+/* Navbar */
+
+header {
+    margin-inline: 10px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navigation {
+    background-color: #101014;
+    padding: 10px;
+    width: 60%;
+    display: inline-block;
+    border-radius: 5px;
+    max-height: 80px;
+    margin-right: 10px;
+}
+
+.nav-list {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.nav-item a {
+    float: right;
+    display: block;
+    text-align: center;
+    margin-inline: 20px;
+    font-size: 20px;
+    color: aliceblue;
+    padding: 10px;
+}
+
+.nav-item a:hover {
+    background-color: #50C878;
+}
+
+.close-icon i {
+    font-size: 60px;
+    cursor: pointer;
+    float: left;
+}
+
+.bar-icon {
+    display: inline-block;
+    font-size: 60px;
+    margin-right: 10px;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.brand {
+    font-size: 60px;
+    display: inline-block;
+}
+
+.hide {
+    display: none;
+}
+
+/* Navbar Smartphone layout */
+
+@media (max-width: 460px) {
+    .navigation {
+        max-height: auto;
+    }
+
+    .nav-item a {
+        float: left;
+        display: inline;
+        text-align: center;
+        margin-inline: 3px;
+        font-size: 10px;
+        color: aliceblue;
+        padding: 5px;
+    }
+
+    .close-icon i {
+        font-size: 30px;
+    }
+
+    .brand {
+        font-size: 20px;
+    }
+}
+
+/* search box */
+
+ .search-box{
+    border: solid 1px #50C878;
+    margin-top: 20px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 1px 2px 3px #50C878;
+ }
+
+ .search-box select{
+    padding: 10px;
+ }
+
+ .search-box input{
+    padding: 10px;
+ }
+
+ .search-box button{
+    padding: 10px;
+    background-color: aliceblue;
+ }
+
+ .search-box button:hover{
+    background-color: #101014;
+    color: aliceblue;
+    box-shadow: 1px 2px 3px aliceblue;
+ }
+
+ /* search box for smartphones */
+
+ @media screen and (max-width: 460px){
+    .search-box input, .search-box button, .search-box select{
+        min-width: 300px;
+        margin: 5px;
+    }
+ }
+
+ /* Forum Info */
+
+ .forum-info{
+    padding: 20px;
+    background-color: rgb(31, 31, 31);
+ }
+
+ .chart{
+    font-size: 20px;
+    font-weight: bold;
+ }
+
+ /* Footer styling */
+ footer{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #50C878;
+    display: block;
+    text-align: center;
+ }
+
+ /* ##################################### */
+ /* posts.html */
+
+ .table-head{
+    display:flex;
+ }
+
+ .table-head div{
+    padding: 5px;
+    margin: 2px;
+    background-color: #50C878;
+    font-weight:bold;
+ }
+
+ .table-head .status{
+    flex: 5%;
+ }
+
+ .table-head .subjects{
+    flex: 70%;
+ }
+
+ .table-head .replies{
+    flex: 10%;
+ }
+ .table-head .last-reply{
+    flex: 15%;
+ }
+
+ /* Table Body */
+
+ .table-row{
+    display: flex;
+ }
+
+ .table-row .status, .table-row .subjects, .table-row .replies, .table-row .last-reply{
+    padding: 5px;
+    margin: 2px;
+    background-color: rgb(49, 49, 49);
+ }
+
+ .table-row .status{
+    flex: 5%;
+    font-size: 30px;
+    text-align: center;
+ }
+
+ .table-row .subjects{
+    flex: 70%;
+ }
+
+ .table-row .replies{
+    flex: 10%;
+ }
+
+ .table-row .last-reply{
+    flex: 15%;
+}
+
+/* Pagination */
+.pagination{
+    padding: 20px;
+    font-size: 15px;
+}
+
+.pagination a{
+    margin-inline: 5px;
+    color:aliceblue;
+    padding: 5px 10px;
+    border: solid #50C878 1px;
+}
+
+.pagination a:hover{
+    opacity: 0.5;
+}
+
+/* Navigation */
+
+.navigate{
+    margin-block: 20px;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.navigate a{
+    color: aliceblue;
+}
+
+.navigate a:hover{
+    color: #50C878;
+    font-weight: bolder;
+}
+
+/* Status Note */
+
+.note{
+    background-color: rgb(49, 49, 49);
+    padding: 20px;
+    display: block;
+}
+
+.note span{
+    font-size: 20px;
+    margin-block: 5px;
+}
+
+/* ############################# */
+/* detail.html */
+
+.head{
+    display: flex;
+    background-color:rgb(49, 49, 49);
+    padding: 5px;
+    font-weight:bold;
+    font-size: 15px;
+}
+
+.authors{
+    flex: 10%;
+    padding-right: 20px;
+}
+
+.content{
+    padding-left: 20px;
+    flex: 90%;
+}
+
+.body{
+    display:flex;
+    background-color: rgb(31, 31, 31);
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.body .authors .username{
+    font-size: 20px;
+}
+
+.body .authors img{
+    max-width: 100px;
+    max-height: auto;
+}
+
+.body .content .comment button{
+    border: none;
+    padding: 10px;
+    font-weight: bolder;
+    box-shadow: 4px 6px #50C878;
+    float: right;
+    cursor: pointer;
+}
+
+/* comment box */
+
+.comment-area{
+    margin-top: 50px;
+}
+
+.comment-area textarea{
+    width: 100%;
+    min-width: 100px;
+    padding: 10px;
+    margin-block: 10px;
+}
+
+.comment-area input{
+    float: right;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.comment-area input:hover{
+    border: solid 1px #101014
+}
+
+.comments-container{
+    margin-top: 50px;
+}
+
+/* Reply Container Styling */
+
+.body .content .reply button{
+    border: none;
+    padding: 10px;
+    font-weight: bolder;
+    box-shadow: 4px 6px #50C878;
+    float: right;
+    cursor: pointer;
+}
+
+/* comment box */
+
+.reply-area{
+    margin-top: 50px;
+}
+
+.reply-area textarea{
+    width: 100%;
+    min-width: 100px;
+    padding: 10px;
+    margin-block: 10px;
+}
+
+.reply-area input{
+    float: right;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.reply-area input:hover{
+    border: solid 1px #101014
+}
